@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import winsound
 
-location_arr = ['46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68']
-locationname_arr = ['Lawrenceville','Bayonne','North Cape May','Camden','Cardiff','Salem','Delanco','Eatontown','SouthPlainfield','Edison','Flemington','Toms River','Freehold','Lodi','Vineland','Newark','North Bergen','Wayne','Oakland','Paterson','Thorofare','Rahway','Randolph']
+location_arr = ['47','52','55','56','57','59','60','67']
+locationname_arr = ['Bayonne','Edison','Lodi','Newark','North Bergen','Paterson','Rahway','Wayne']
 base_url_link = 'https://telegov.njportal.com/njmvc/AppointmentWizard/7/'
 required_months = ['September','October']
 
