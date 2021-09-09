@@ -5,10 +5,10 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import winsound
 
-location_arr = ['101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123']
+location_arr = ['46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68']
 locationname_arr = ['Lawrenceville','Bayonne','North Cape May','Camden','Cardiff','Salem','Delanco','Eatontown','SouthPlainfield','Edison','Flemington','Toms River','Freehold','Lodi','Vineland','Newark','North Bergen','Wayne','Oakland','Paterson','Thorofare','Rahway','Randolph']
-base_url_link='https://telegov.njportal.com/njmvc/AppointmentWizard/11/'
-required_months = ['May','June']
+base_url_link = 'https://telegov.njportal.com/njmvc/AppointmentWizard/7/'
+required_months = ['September','October']
 
 def beep():
     winsound.Beep(1500, 500)
@@ -25,8 +25,8 @@ def job():
     print("\n\n\nDate Time: ", dt_string, "\n\n")
     i=0
     found=0
-    
-    
+
+
     for location in location_arr:
         print(location)
         with urllib.request.urlopen(base_url_link+location) as response:
@@ -43,12 +43,12 @@ def job():
                 #print("Matching required months")
                 date_string=re.sub('Time of Appointment for ', '', date_string.text)
                 date_string=re.sub(':', '', date_string)
-                message = 'DL Renew Dates: '+locationname_arr[i]+' / ('+location+') : '+date_string
+                message = 'DL Transfer Dates: '+locationname_arr[i]+' / ('+location+') : '+date_string
                 print(message)
                 beep()
                 found=1
         i=i+1
-        
+
 while True :
     try:
         job()
@@ -57,4 +57,3 @@ while True :
         time.sleep(60)
     else:
         time.sleep(60)
-    
